@@ -6,7 +6,7 @@ PSR-11 compatible easy to use library for managing PHP built-in sessions. PDO ha
 
 ## Requirements
 
- * [PHP >= 5.6](http://www.php.net/)
+ * [PHP >= 7.1](http://www.php.net/)
 
 ## How to install
 
