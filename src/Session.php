@@ -32,11 +32,13 @@ class Session implements ContainerInterface
 
     public function __construct(SessionHandler $handler, $sessionName = null)
     {
-        if (!empty($sessionName)) {
-            session_name($sessionName);
+        if (session_status() == PHP_SESSION_NONE) {
+            if (!empty($sessionName)) {
+                session_name($sessionName);
+            }
+            session_set_save_handler($handler);
+            $this->isStarted = session_start();
         }
-        session_set_save_handler($handler);
-        $this->isStarted = session_start();
     }
 
     /**
